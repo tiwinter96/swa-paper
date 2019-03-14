@@ -1,11 +1,11 @@
-\pagebreak
 \section{Cloud Architektur}
 
 Bei den Cloud Architekturen gibt es genau 3 verschiedene Rollen:
 \begin{enumerate}
 	\item \textbf{Provider:} bietet Cloud Producte/Lösungen an
 	\item \textbf{Konsumenten:} konsumieren Cloud Lösungen
-	\item \textbf{Klient:} nehmen Cloud Lösungen (Anwendungen/Daten) in Anspruch
+	\item \textbf{Klient:} nehmen Cloud Lösungen
+	 (Anwendungen/Daten) in Anspruch
 \end{enumerate}
 
 \subsection{Konzeptuelle Sichtweise}
@@ -14,17 +14,30 @@ In diesem Abschnitt werden die Architekturen der einzelnen Kategorien von Cloudl
 
 \subsubsection{Konsumenten Sichtweise}
 
+Wie in \textbf{Abbildung \ref{ConsumerView}} zu sehen, werden Ressourcen in Form von Clustersystemen vom Provider zur Verfügung gestellt.
+Einzelne Klienten können über eine Netzwerkverbindung auf diese Ressourcen zeitgleich zugreifen. Der Provider kann außerdem den Pool
+von Hardware Ressourcen verwalten, d.h. einzelne Hardware kann stillgelegt und ersetzt werden. Die Klienten werden nach dem stilllegen
+auf andere Hardware Ressourcen weitergeleitet.
+\todo{eventuell Rest hinzufügen}
 \begin{figure}[H]
     \centering
 	\includegraphics[width=0.4\textwidth]{Images/ConsumerView}
-	\caption{Cosumer View \cite{Badger}}
+	\caption{Konsumenten Sichtweise \cite{Badger}}
 	\label{ConsumerView}
 \end{figure}
 
-Um die folgenden Cloud Architekturen zu verstehen, wird 
 
+Alle Kategorien von Cloud-Computing können sogenannte Sicherheitsperimeter verwenden. Diese Regeln den Zugriff auf die Ressource.
+In unseren Beispielen kann ein Klient, der sich außerhalb des Sicherheitsperimeter befindet, nur durch einen \glqq boundary controller\grqq
+Zugriff zum Netzwerk erlangen.
 
 \subsubsection{Lokale Private Cloud}
+
+Wie in \textbf{Abbildung \ref{PrivateCloud}} zu sehen, befindet sich eine Private Cloud innerhalb der Organisation.
+Klienten, die sich innerhalb des Sicherheitsperimeters befinden, können sich mit der Privaten Cloud verbinden. 
+Klienten von außerhalb, können eine Verbindung durch den \glqq boundary controller\grqq aufbauen. Dieser Sicherheitsperimeter ist in diesem
+Fall optional und wird von dem Konsumenten verwaltet.
+
 \begin{figure}[H]
     \centering
 	\includegraphics[width=0.4\textwidth]{Images/On-sitePrivateCloud}
@@ -32,8 +45,22 @@ Um die folgenden Cloud Architekturen zu verstehen, wird
 	\label{PrivateCloud}
 \end{figure}
 
+Die Verwaltung der Cloud wird vom Konsumenten übernommen. Dieser muss die Cloud so einstellen, dass die Arbeitslast zwischen verschiedenen
+Maschinen verteilt werden kann, um die Ressourcen optimal nutzen zu können. Außerdem sollten redundante Kopien der Daten auf verschiedenen Maschinen 
+gespeichert werden. Dies hat den Vorteil, dass bei einem Serverausfall der Klient auf eine andere Maschine weitergeleitet werden kann.
+Außerdem muss der Konsument sicherstellen, dass wichtige Daten wie z.B. Lohnabrechnungen nicht von allen Klienten zugegriffen werden können,
+da verschiedenen Daten auf einer Maschine verarbeitet werden können. Der Nachteil von Privaten Clouds ist, dass es hohe Anschaffungskosten, wie z.B. 
+das Anschaffen von neuen Daten Zentren, gibt. Außerdem müssen bei z.B. steigenden Zugriffszahlen, neue Hardware vom Konsumenten bereitgestellt werden. 
+Dies verringert Flexibilität des Konsumenten.
 
 \subsubsection{Ausgelagerte Private Cloud}
+
+Bei der ausgelagerten Privaten Cloud, wird die Cloud zu einem Provider verlagert. Dieser separiert das Organisationsnetzwerk
+von seinem \glqq öffentlichen\grqq Netzwerk, wie in \textbf{Abbildung \ref{OutSourcedPrivateCloud}} zu sehen ist. Das Netzwerk wird vom Provider
+durch einen Sicherheitsperimeter geschützt. Der Provider muss dabei sicherstellen, dass die Sicherheitsanforderungen des Konsumenten erfüllt werden. 
+Der Konsument kann ebenfalls einen Sicherheitsperimeter in seiner Organisation installieren, um den Zugriff zur Cloud zu regeln.
+Die beiden Perimeter werden dann durch einen Kommunikationskanal verbunden und Klienten können dann nur über diesen Kanal auf Daten der Cloud zugreifen.
+
 \begin{figure}[H]
     \centering
 	\includegraphics[width=0.4\textwidth]{Images/OutSourcedPrivateCloud}
@@ -41,8 +68,16 @@ Um die folgenden Cloud Architekturen zu verstehen, wird
 	\label{OutSourcedPrivateCloud}
 \end{figure}
 
+Der Konsument ist in diesem Fall von der Netzwerkverfügbarkeit und -geschwindigkeit des Providers abhängig, kann die Geschwindigkeit aber durch Sondertarife erhöhen.
+Der Provider muss außerdem sicherstellen, dass die Arbeitslast auf den verschiedenen Maschinen innerhalb des Perimeters verteilt wird und sich die Daten 
+nicht mit den Daten von anderen Organisationen, außerhalb des Perimeters, vermischen.
+Der Vorteil dieser Architektur ist es, dass der Konsument keine eigenen Ressourcen mehr anschaffen muss und diese beim Provider mieten kann.
+Eine Erhöhung der verfügbaren Ressourcen kann jedoch vom Provider nur manuell geschehen, sofern dieser über genug Ressourcen verfügt. 
+
+
 
 \subsubsection{Lokale Community Cloud}
+abcdeffg
 \begin{figure}[H]
     \centering
 	\includegraphics[width=0.4\textwidth]{Images/On-siteCommunityCloud}
@@ -139,10 +174,6 @@ Um die folgenden Cloud Architekturen zu verstehen, wird
 	\label{IaaSControl}
 \end{figure}
 
-
-
-
-\pagebreak
 \subsection{Logische Sichtweise}
 \begin{figure}[H]
     \centering
@@ -151,5 +182,5 @@ Um die folgenden Cloud Architekturen zu verstehen, wird
 	\label{IaaSLogic}
 \end{figure}
 
-\subsection{Management}
+% \subsection{Management}
 \pagebreak

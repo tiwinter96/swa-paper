@@ -17,7 +17,6 @@ Wie in \textbf{Abbildung \ref{ConsumerView}} zu sehen, werden Ressourcen in Form
 Einzelne Klienten können über eine Netzwerkverbindung auf diese Ressourcen zeitgleich zugreifen. Der Provider kann außerdem den Pool
 von Hardware Ressourcen verwalten, d.h. einzelne Hardware kann stillgelegt und ersetzt werden. Die Klienten werden nach dem stilllegen
 auf andere Hardware Ressourcen weitergeleitet.
-\todo{eventuell Rest hinzufügen}
 \begin{figure}[H]
     \centering
 	\includegraphics[width=0.4\textwidth]{Images/ConsumerView}
@@ -153,9 +152,9 @@ Bekannte Public Cloud Provider sind Amazon Web Services (AWS) und Microsoft Azur
 
 \subsection{Architekturen der Dienstmodelle}
 
-In diesem Abschnitt werden die drei Dienstmodelle die Public Cloud Provider ihren Kunden (Konsumenten) anbieten, 
+In diesem Abschnitt werden die Architekturen der drei Dienstmodelle SaaS, PaaS, IaaS beschrieben.
 
-\subsubsection{SaaS}
+\subsubsection{SaaS}\label{SaaS Architektur}
 
 \begin{figure}[H]
     \centering
@@ -163,9 +162,12 @@ In diesem Abschnitt werden die drei Dienstmodelle die Public Cloud Provider ihre
 	\caption{SaaS Interaktion \cite{Badger}}
 	\label{SaaSInteraction}
 \end{figure}
+Wie bereits in Abschnitt \ref{IaaS} beschrieben, stellt der Provider den Klienten Anwendungen (\glqq Apps\grqq) zu Verfügung.
+Diese Anwendungen können dann über das öffentliche Internet (Webseiten) aufgerufen werden.
+Wie in \textbf{Abbildung \ref{SaaSInteraction}.A} zu sehen ist, kann ein Provider mehrere Apps anbieten und ausführen.
+Er hat dabei eine gewisse Anzahl an \glqq Execution Ressources\grqq (exr) zur Verfügung. 
+Dabei wird den Klienten bei jedem starten einer Anwendung eine exr zugewiesen. Sollten neue Klienten hinzukommen, werden ihm verbleibende Ressourcen (exr) zugewiesen. 
 
-
-aaa
 \begin{figure}[H]
     \centering
 	\includegraphics[width=0.4\textwidth]{Images/SaaSControl}
@@ -173,7 +175,26 @@ aaa
 	\label{SaaSControl}
 \end{figure}
 
-aaaaaa
+\textbf{Abbildung \ref{SaaSControl}} zeigt, wie die Kontroll- und Managementverantwortung zwischen den Provider und den Konsumenten verteilt wird.
+Bei Software as a Service hat der Konsument nur die Kontrolle auf der Benutzerebene, d.h. dieser kann Benutzerverwalten wie z.B. Benutzer hinzufügen.
+Der Provider hingegen verfügt die totale Kontrolle über alle Bereiche. Diese muss ist Verantwortlich für das Erstellen, konfigurieren und Verwalten der Anwendungen, 
+sodass der Konsument diesen Service nutzen kann.
+Bei der Middleware Schicht kann der Provider sowohl über die Software Bibliotheken, als auch Datenbankenservices entscheiden, der Konsument hat darauf keinen Einfluss.
+Das selbe gilt bei der Wahl des Betriebssystems und der Hardware, bei der der Konsument keinen Einfluss hat.
+
+\subsubsection*{Vorteile von SaaS}
+
+Im Vergleich zu traditionellen Computing- und Softwareverteilungslösungen bieten SaaS-Clouds Skalierbarkeit und verlagern zudem die Belastungen vom Konsumenten zum Provider.
+Die Vorteile eines solchen Services sind, dass für öffentliche und ausgelagerten Szenarien, sich der Großteil der von einer Anwendung verwalteten Daten auf den Softwareverteilungslösungen
+des Cloud-Providers befinden. Der Provider kann diese Daten dezentral und Redundant speichern, sodass ein Verlust von Daten unwahrscheinlich wird. Außerdem bieten SaaS-Provider
+ein professionelles Management System an, dass z.B. Compilance-Check (Datenschutz), Security-Scanning (Virenprüfung), Backup und Disaster Recovery unterstützt.
+
+
+\subsubsection{Funktionsweise von SaaS}
+
+Wie bereits erwähnt wird bei Starten einer Anwendung von einem Nutzer ein Prozess (exr) gestartet. Dabei haben die Provider meist eine statische oder eine dynamische
+Lösung, um die Anwendung zu betreiben, wie \textbf{Abbildung \ref{SaaSM1}} zeigt.
+
 \begin{figure}[H]
     \centering
 	\includegraphics[width=0.4\textwidth]{Images/SaaSM1}
@@ -181,7 +202,10 @@ aaaaaa
 	\label{SaaSM1}
 \end{figure}
 
-aaa
+In diesem Szenario wird eine aktive Kopie der Anwendung für jeden Benutzer gestartet. Jede Anwendung betreibt dabei ein eigenes Datenbanksystem, indem die Daten der Benutzer gespeichert werden.
+Somit besitzt jeder Klient eine eigene Kopie der Daten. Die einzelnen Kopien der Anwendung, der Datenbanksysteme und die Separierung der Benutzer wird durch das Betriebssystem ermöglicht.
+Ein großer Nachteil dieses Szenarios ist es, dass hohe Kosten für das Betreiben und Synchronisieren der einzelnen Datenbanksystemen entstehen.
+
 
 \begin{figure}[H]
     \centering
@@ -190,8 +214,13 @@ aaa
 	\label{SaaSM2}
 \end{figure}
 
+Beim statischen Szenario (\textbf{Abbildung \ref{SaaSM2}}) wird die Anwendung vom Provider so implementiert, sodass mehrere Klienten gleichzeitig daran Arbeiten können und die Daten in nur einem Datenbanksystem gespeichert werden. 
+Dies hat den Vorteil das die Kosten für den Provider gesenkt werden, da nur noch eine Anwendung betrieben wird.
+Die Anwendung selbst, muss dafür aber die Daten mehrerer Klienten gleichzeitig verarbeiten und trotzdem sicherstellen, dass die Sicherheit der Daten gewährleistet ist.   
+
 \subsubsection{Paas}
-aaa
+
+Der Unterschied von Platform as a Service zu Software as a Service ist, das Konsumenten die Möglichkeit haben, eigene Anwendungen bei dem Cloud Provider 
 
 \begin{figure}[H]
     \centering

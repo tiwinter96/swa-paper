@@ -158,7 +158,7 @@ In diesem Abschnitt werden die Architekturen der drei Dienstmodelle SaaS, PaaS, 
 
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/SaaSInteraction}
+	\includegraphics[width=0.4\textwidth, height=8cm]{Images/SaaSInteraction}
 	\caption{SaaS Interaktion \cite{Badger}}
 	\label{SaaSInteraction}
 \end{figure}
@@ -170,7 +170,7 @@ Dabei wird den Klienten bei jedem starten einer Anwendung eine exr zugewiesen. S
 
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/SaaSControl}
+	\includegraphics[width=0.45\textwidth]{Images/SaaSControl}
 	\caption{SaaS Kontrollverteilung \cite{Badger}}
 	\label{SaaSControl}
 \end{figure}
@@ -186,7 +186,7 @@ Das selbe gilt bei der Wahl des Betriebssystems und der Hardware, bei der der Ko
 
 Im Vergleich zu traditionellen Computing- und Softwareverteilungslösungen bieten SaaS-Clouds Skalierbarkeit und verlagern zudem die Belastungen vom Konsumenten zum Provider.
 Die Vorteile eines solchen Services sind, dass für öffentliche und ausgelagerten Szenarien, sich der Großteil der von einer Anwendung verwalteten Daten auf den Softwareverteilungslösungen
-des Cloud-Providers befinden. Der Provider kann diese Daten dezentral und Redundant speichern, sodass ein Verlust von Daten unwahrscheinlich wird. Außerdem bieten SaaS-Provider
+des Cloud-Providers befinden. Der Provider kann diese Daten dezentral und redundant speichern, sodass ein Verlust von Daten unwahrscheinlich wird. Außerdem bieten SaaS-Provider
 ein professionelles Management System an, dass z.B. Compilance-Check (Datenschutz), Security-Scanning (Virenprüfung), Backup und Disaster Recovery unterstützt.
 
 
@@ -204,7 +204,7 @@ Lösung, um die Anwendung zu betreiben, wie \textbf{Abbildung \ref{SaaSM1}} zeig
 
 In diesem Szenario wird eine aktive Kopie der Anwendung für jeden Benutzer gestartet. Jede Anwendung betreibt dabei ein eigenes Datenbanksystem, indem die Daten der Benutzer gespeichert werden.
 Somit besitzt jeder Klient eine eigene Kopie der Daten. Die einzelnen Kopien der Anwendung, der Datenbanksysteme und die Separierung der Benutzer wird durch das Betriebssystem ermöglicht.
-Ein großer Nachteil dieses Szenarios ist es, dass hohe Kosten für das Betreiben und Synchronisieren der einzelnen Datenbanksystemen entstehen.
+Ein großer Nachteil dieses Szenarios ist es, dass hohe Kosten für das Betreiben und Synchronisieren der einzelnen Datenbanksysteme entstehen.
 
 
 \begin{figure}[H]
@@ -214,13 +214,13 @@ Ein großer Nachteil dieses Szenarios ist es, dass hohe Kosten für das Betreibe
 	\label{SaaSM2}
 \end{figure}
 
-Beim statischen Szenario (\textbf{Abbildung \ref{SaaSM2}}) wird die Anwendung vom Provider so implementiert, sodass mehrere Klienten gleichzeitig daran Arbeiten können und die Daten in nur einem Datenbanksystem gespeichert werden. 
+Beim statischen Szenario (\textbf{Abbildung \ref{SaaSM2}}) wird die Anwendung vom Provider so implementiert, sodass mehrere Klienten gleichzeitig daran arbeiten können und die Daten in nur einem Datenbanksystem gespeichert werden. 
 Dies hat den Vorteil das die Kosten für den Provider gesenkt werden, da nur noch eine Anwendung betrieben wird.
 Die Anwendung selbst, muss dafür aber die Daten mehrerer Klienten gleichzeitig verarbeiten und trotzdem sicherstellen, dass die Sicherheit der Daten gewährleistet ist.   
 
 \subsubsection{Paas}
 
-Der Unterschied von Platform as a Service zu Software as a Service ist, das Konsumenten die Möglichkeit haben, eigene Anwendungen bei dem Cloud Provider 
+Der Unterschied von Platform as a Service zu Software as a Service ist, dass Konsumenten die Möglichkeit haben, eigene Anwendungen bei dem Cloud Provider betreiben zu lassen.
 
 \begin{figure}[H]
     \centering
@@ -229,13 +229,24 @@ Der Unterschied von Platform as a Service zu Software as a Service ist, das Kons
 	\label{PaaSInteration}
 \end{figure}
 
-aaaaaa
+In der \textbf{Abbildung \ref{PaaSInteration}} wird gezeigt, wie sich die Interaktionen der einzelnen Nutzer verändern.
+Der Klient kann weiterhin auf die Anwendungen (A, B, C) zugreifen. Beim Zugreifen wird hier ebenfalls ein neuer Prozess (exr) gestartet. Der Unterschied hier ist aber, dass
+der Konsument für die Bereitstellung, Verwaltung, Aktualisierung der Anwendung zuständig ist. Der Provider bietet dem Konsumenten nur die Ressourcen um die Anwendung(en) zu betreiben.
+Außerdem kann ein Provider ebenfalls Entwicklungswerkzeuge anbieten, die von den Entwicklern des Konsumenten verwendet werden können (z.B. eigene Datenbank).
+
+
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/PaaSControl}
+	\includegraphics[width=0.45\textwidth]{Images/PaaSControl}
 	\caption{PaaS Kontrollverteilung \cite{Badger}}
 	\label{PaaSControl}
 \end{figure}
+
+Bei der Kontrolle der Schichten hat der Provider nur noch die Kontrolle über das Betriebssystem und die Hardware, wie die \textbf{Abbildung \ref{PaaSControl}} zeigt.
+Sollte der Provider noch Entwicklungswerkzeuge anbieten so behält er die Administrative Kontrolle über diese Werkzeuge. Der Konsument hingegen hat im gegensatz zu SaaS,
+die volle Kontrolle über die Anwendungen und falls er keine Entwicklungswerkzeuge nutzt, über die Middleware Schicht.
+
+\subsubsection*{Vorteile von PaaS}
 
 \subsubsection{IaaS}
 aaa

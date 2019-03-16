@@ -25,37 +25,52 @@ Eine Gruppe von Individuen und/oder Institutionen, die durch solche Regeln defin
 bilden die sogenannten \textbf{Virtuellen Organisationen}.\cite{anatomy-of-grid}
 
 \subsection{Anwendungsbereich}
-Während Cloud Computing hauptsächlich Lösungen für verschiedene webbasierte Businessfälle bietet, also eher einem kommerziellen Zweck dient, wird Grid Computing dagegen mehr in wissenschaftlichen Projekten bei rechenintensiven Aufgaben eingesetzt.
+Während Cloud Computing hauptsächlich Lösungen für verschiedene kommerzielle webbasierte Businessfälle bietet, wird Grid Computing dagegen mehr in wissenschaftlichen Gebieten wie Chemie, Physik, Genetik, Kryptologie und Mathematik bei rechenintensiven Aufgaben eingesetzt \cite{5623257}.
+
 Grids stellen Rechenressourcen bereit, die zum Speichern und Analysieren von großen Datenmengen verwendet werden. Davon profitiert beispielsweise der \textbf{Large Hadron Collider} bei CERN.\cite{wlcg}
+
+Der Zugriff auf die verschiedenen Arten von Anwendungen kann über sogenannte \textit{Scientific Gateways} bereitgestellt werden. Außerdem bieten diese Gateways die Möglichkeit zur Entdeckung von Ressourcen sowie Job-Excecution-Dienste auf die über Internetbrowser zugegriffen werden kann\cite{360-degree-compared}.
+% Weiterhin findet Grid Einsatz in solchen Wissenschaftsgebieten wie 
+
 \subsection{Geschäftsmodell}
 Typischerweise ist das Geschäftsmodell der Grids (zumindest im akademischen Bereich) projektorientiert und die Anwender oder die Community hat eine bestimmte Anzahl an Serviceeinheiten, die verbraucht werden können\cite{360-degree-compared}.  
 Dieses Konzept wird beispielsweise von XSEDE (Extreme Science and Engineering Discovery Environment) -- einem Anbieter von digitalen Dienstleistungen wie Supercomputern -- verwendet\cite{xsede}.
 Wenn eine Institution mit ihren eigenen Ressourcen einem solchen Netzwerk beitritt stellt sie diese zur Nutzung für die Community bereit und kann auf die Ressourcen der anderen zugreifen\cite{360-degree-compared}.
+
+
 
 \subsection{Architektur}
 Die Grid-Netze konzentrieren sich auf die Integration vorhandener Ressourcen mit ihrer Hardware, Betriebssystemen, lokalem Ressourcenmanagement und der Sicherheitsinfrastruktur.
 Um die Entdeckung sowie die gemeinsame Nutzung von diesen Ressourcen in den sogenannten \glqq Virtuellen Organisationen\grqq{} zu ermöglichen, stellen Grids eine Menge von Standardprotokollen, Middleware, Toolkits sowie Diensten, die auf diesen Protokollen aufbauen, bereit.
 Da Ressourcen von verschiedene administrativen Domänen sein können und somit ihre eigene Verwendungsregeln, andere Hard- oder Softwarekonfiguration haben können, stellt die Interoperabilität und Sicherheit das Hauptanliegen für die Gridinfrastruktur dar.\cite{360-degree-compared}
 
+Die Grid Architektur besteht aus fünf verschiedenen Schichten. Jede einzelne Schicht hat einen spezifischen Zweck und stellt entsprechende Protokolle bereit \cite{360-degree-compared}:
 
-% In der Abbildung \ref{gpa} sind fünf Schichten der Grid Protokollarchitektur dargestellt. Jede einzelne Schicht hat einen spezifischen Zweck und stellt entsprechende Protokolle bereit.
-In der Abbildung \ref{gvc} wird die Grid Protokollarchitektur mit der Cloud Architektur vergleichend dargestellt.
+\begin{itemize}
+\item \textbf{\textit{Fabric layer}} stellt Rechen-, Speicher-, Netzwerkressourcen bereit.
+\item \textbf{\textit{Connectivity layer}} definiert Kommunikations- und Authentifizierungsprotokolle.
+\item \textbf{\textit{Resource layer}} definiert unter anderem Protokolle zum Publizieren, Entdecken und Vermitteln von Ressourcen.
+\item \textbf{\textit{Collective layer}} zum Erfassen von Interaktionen zwischen Sammlungen von Ressourcen.
+\item \textbf{\textit{Application layer}} enthält Benutzeranwendungen, die auf den o.g. Protokollen aufbauen.
+\end{itemize}
 
-\begin{figure}[ht]
-	\centering
-  \includegraphics[width=0.4\textwidth, height=9cm]{Images/grid-vs-cloud.png}
-	\caption{Grid Protokollarchitektur vs. Cloud Architektur}
-	\label{gvc}
-\end{figure}
-
-
+% In der Abbildung \ref{gvc} wird die Grid Protokollarchitektur mit der Cloud Architektur vergleichend dargestellt.
 
 % \begin{figure}[ht]
 % 	\centering
-%   \includegraphics[width=0.3\textwidth]{Images/grid-protocol-arch.jpg}
-% 	\caption{Grid Protokollarchitektur\cite{360-degree-compared}}
-% 	\label{gpa}
+%   \includegraphics[width=0.4\textwidth, height=9cm]{Images/grid-vs-cloud.png}
+% 	\caption{Grid Protokollarchitektur vs. Cloud Architektur}
+% 	\label{gvc}
 % \end{figure}
+
+
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.3\textwidth]{Images/grid-protocol-arch.jpg}
+	\caption{Grid Protokollarchitektur\cite{360-degree-compared}}
+	\label{gpa}
+\end{figure}
 
 % \begin{figure}[ht]
 % 	\centering
@@ -70,14 +85,14 @@ Die Ressourcen einer virtuellen Organisation können geographisch verteilt sein.
 
 Der Einsatz von Middlewareanwendungen bietet eine zusätzliche Schicht an Homogenität, um das Problem mit der heterogenen Hard- und Software etwas zu lindern. Dadurch wird die Ressourcenverwaltung innerhalb der virtuellen Organisationen vereinfacht. Jedoch bleibt die Entwicklung der Grid-übergreifenden Anwendungen, die mehrere virtuelle Organisationen betreffen immer noch schwierig.\cite{McEvoy:2008:UCA:1462704.1462715}
 
-Grid Computing baut nicht so viel auf der Virtualisierung wie Cloud Computing, was allerdings daran liegen kann, dass jede einzelne Organisation ihre eigenen Ressourcen, die nicht notwendigerweise virtualisiert sind, verwalten will\cite{360-degree-compared}. 
+Grid Computing baut nicht so viel auf der Virtualisierung wie Cloud Computing, was allerdings daran liegen kann, dass jede einzelne Organisation ihre eigenen Ressourcen, die nicht notwendigerweise virtualisiert sind, selbst verwalten will\cite{360-degree-compared}. 
 
 Aus Benutzersicht werden Ressourcen bei Cloud Computing zentral verwaltet.
 Der Benutzer kann, im Web, vom Cloud Provider zur Verfügung gestellte Schnittstelle verwenden,
 um Ressourcen bei Bedarf flexibel auf Anforderung hinzuzufügen oder zu entfernen.
 Grid Computing ist in dieser Hinsicht dezentralisiert. Die Ressourcen können sich in unterschiedlichen virtuellen Organisationen befinden. Außerden ist eine flexible Erweiterung der Ressourcen nicht möglich. Um auf zusätzliche Ressourcen zugreifen zu können muss zuerst einer virtuellen Organisation beigetreten werden, was durch manuelle Genehmigungen eine längere Zeit dauern kann.
 
-Compute Model (Batch-scheduled compute model bei Grid vs Cloud etc.) usw.
+Während im Grid die Ressourcen meistens von einem lokalen Ressourcenmanager unter Verwendung von Batch-Scheduling verwaltet werden und die Berechnungen eins nach dem anderen abgearbeitet werden, sind in der Cloud alle Ressourcen für alle Benutzer zur gleichen Zeit verfügbar\cite{360-degree-compared}.
 
 % \subsection{Fazit}
 % \hlred{

@@ -19,11 +19,10 @@ von Hardware Ressourcen verwalten, d.h. einzelne Hardware kann stillgelegt und e
 auf andere Hardware Ressourcen weitergeleitet.
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/ConsumerView}
+	\includegraphics[width=0.4\textwidth]{Images/ConsumerView}
 	\caption{Konsumenten Sichtweise \cite{Badger}}
 	\label{ConsumerView}
 \end{figure}
-
 
 Alle Kategorien von Cloud-Computing können sogenannte Sicherheitsperimeter verwenden. Diese Regeln den Zugriff auf die Ressource.
 In unseren Beispielen kann ein Klient, der sich außerhalb des Sicherheitsperimeter befindet, nur durch einen \glqq boundary controller\grqq
@@ -38,7 +37,7 @@ Fall optional und wird von dem Konsumenten verwaltet.
 
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/On-sitePrivateCloud}
+	\includegraphics[width=0.4\textwidth]{Images/On-sitePrivateCloud}
 	\caption{Private Cloud \cite{Badger}}
 	\label{PrivateCloud}
 \end{figure}
@@ -61,7 +60,7 @@ Die beiden Perimeter werden dann durch einen Kommunikationskanal verbunden und K
 
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/OutSourcedPrivateCloud}
+	\includegraphics[width=0.4\textwidth]{Images/OutSourcedPrivateCloud}
 	\caption{Ausgelagerte Private Cloud \cite{Badger}}
 	\label{OutSourcedPrivateCloud}
 \end{figure}
@@ -72,8 +71,6 @@ nicht mit den Daten von anderen Organisationen, außerhalb des Perimeters, vermi
 Der Vorteil dieser Architektur ist es, dass der Konsument keine eigenen Ressourcen mehr anschaffen muss und diese beim Provider mieten kann.
 Eine Erhöhung der verfügbaren Ressourcen kann jedoch vom Provider nur manuell geschehen, sofern dieser über genug Ressourcen verfügt. 
 
-
-
 \subsubsection{Lokale Community Cloud}
 
 Bei der Lokalen Community Cloud teilen mehrere Organisationen ihre Ressourcen und Daten. Alle Organisation stellen und/oder konsumieren Cloud Services.
@@ -83,7 +80,7 @@ Organisationen können außerdem einen weiteren Sicherheitsperimeter einrichten,
 
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/On-siteCommunityCloud}
+	\includegraphics[width=0.4\textwidth]{Images/On-siteCommunityCloud}
 	\caption{Lokale Community Cloud \cite{Badger}}
 	\label{On-siteCommunityCloud}
 \end{figure}
@@ -94,7 +91,6 @@ können verschiedene Level der Performance, Sicherheit und Zuverlässigkeit bere
 hierbei von den den Sicherheitsperimeter der einzelnen Organisationen ab. Ein großer Nachteil dieser Methode sind die hohen Kosten der einzelnen Provider, die Ressourcen 
 anschaffen und Services konfigurieren müssen. Die Konsumenten hingegen zahlen nur die Mietkosten der für die Verwendungen der einzelnen Clouds. Ein weiterer Nachteil ist, dass 
 die Ressourcen lokal bereitgestellt werden und somit limitiert sind. Wodurch die Flexibilität der einzelnen Organisationen sinkt.
-
 
 \subsubsection{Ausgelagerte Community Cloud}
 
@@ -107,11 +103,10 @@ dem Provider installiert werden.
 
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/OutSourcedCommunityCloud}
+	\includegraphics[width=0.4\textwidth]{Images/OutSourcedCommunityCloud}
 	\caption{Ausgelagerte Community Cloud \cite{Badger}}
 	\label{OutSourcedCommunityCloud}
 \end{figure}
-
 
 \subsubsection{Public Cloud}
 
@@ -121,7 +116,7 @@ Außer das der Konsument einen eigenen Sicherheitsperimeter installiert, um den 
  
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/PublicCloud}
+	\includegraphics[width=0.4\textwidth]{Images/PublicCloud}
 	\caption{Public Cloud \cite{Badger}}
 	\label{PublicCloud}
 \end{figure}
@@ -139,7 +134,6 @@ Ein großer Vorteil der Public Cloud ist die Uneingeschränktheit in Hinsicht de
 meist \glqq uneingeschränkt\grqq erhöhen oder vermindern.
 
 Bekannte Public Cloud Provider sind Amazon Web Services (AWS) und Microsoft Azure. 
-
 
 % \subsubsection{Hybrid Cloud}
 % Eine Hybrid Cloud besteht aus mindestens zwei oder mehreren Privaten, Community oder Public Clouds.
@@ -189,7 +183,6 @@ Die Vorteile eines solchen Services sind, dass für öffentliche und ausgelagert
 des Cloud-Providers befinden. Der Provider kann diese Daten dezentral und redundant speichern, sodass ein Verlust von Daten unwahrscheinlich wird. Außerdem bieten SaaS-Provider
 ein professionelles Management System an, dass z.B. Compilance-Check (Datenschutz), Security-Scanning (Virenprüfung), Backup und Disaster Recovery unterstützt.
 
-
 \subsubsection{Funktionsweise von SaaS}
 
 Wie bereits erwähnt wird bei Starten einer Anwendung von einem Nutzer ein Prozess (exr) gestartet. Dabei haben die Provider meist eine statische oder eine dynamische
@@ -206,7 +199,6 @@ In diesem Szenario wird eine aktive Kopie der Anwendung für jeden Benutzer gest
 Somit besitzt jeder Klient eine eigene Kopie der Daten. Die einzelnen Kopien der Anwendung, der Datenbanksysteme und die Separierung der Benutzer wird durch das Betriebssystem ermöglicht.
 Ein großer Nachteil dieses Szenarios ist es, dass hohe Kosten für das Betreiben und Synchronisieren der einzelnen Datenbanksysteme entstehen.
 
-
 \begin{figure}[H]
     \centering
 	\includegraphics[width=0.5\textwidth]{Images/SaaSM2}
@@ -219,12 +211,12 @@ Dies hat den Vorteil das die Kosten für den Provider gesenkt werden, da nur noc
 Die Anwendung selbst, muss dafür aber die Daten mehrerer Klienten gleichzeitig verarbeiten und trotzdem sicherstellen, dass die Sicherheit der Daten gewährleistet ist.   
 
 \subsubsection{Paas}
-
+\todo{eventuell text anpassen}
 Der Unterschied von Platform as a Service zu Software as a Service ist, dass Konsumenten die Möglichkeit haben, eigene Anwendungen bei dem Cloud Provider betreiben zu lassen.
 
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/PaaSInteraction}
+	\includegraphics[width=0.4\textwidth]{Images/PaaSInteraction}
 	\caption{PaaS Interaktion \cite{Badger}}
 	\label{PaaSInteration}
 \end{figure}
@@ -233,7 +225,6 @@ In der \textbf{Abbildung \ref{PaaSInteration}} wird gezeigt, wie sich die Intera
 Der Klient kann weiterhin auf die Anwendungen (A, B, C) zugreifen. Beim Zugreifen wird hier ebenfalls ein neuer Prozess (exr) gestartet. Der Unterschied hier ist aber, dass
 der Konsument für die Bereitstellung, Verwaltung, Aktualisierung der Anwendung zuständig ist. Der Provider bietet dem Konsumenten nur die Ressourcen um die Anwendung(en) zu betreiben.
 Außerdem kann ein Provider ebenfalls Entwicklungswerkzeuge anbieten, die von den Entwicklern des Konsumenten verwendet werden können (z.B. eigene Datenbank).
-
 
 \begin{figure}[H]
     \centering
@@ -270,7 +261,7 @@ aaaaaaaaa
 \begin{figure}[H]
     \centering
 	\includegraphics[width=0.5\textwidth]{Images/IaaSLogic}
-	\caption{IaaS Logische Sichtweise \cite{Badger}}
+	\caption{IaaS Logische Sichtweise (vgl. \cite{Badger})}
 	\label{IaaSLogic}
 \end{figure}
 

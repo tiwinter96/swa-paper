@@ -43,17 +43,21 @@ Wenn eine Institution mit ihren eigenen Ressourcen einem solchen Netzwerk beitri
 Die Grid-Netze konzentrieren sich auf die Integration vorhandener Ressourcen mit ihrer Hardware, Betriebssystemen, lokalem Ressourcenmanagement und der Sicherheitsinfrastruktur.
 Um die Entdeckung sowie die gemeinsame Nutzung von diesen Ressourcen in den sogenannten \glqq Virtuellen Organisationen\grqq{} zu ermöglichen, stellen Grids eine Menge von Standardprotokollen, Middleware, Toolkits sowie Diensten, die auf diesen Protokollen aufbauen, bereit.
 Da Ressourcen von verschiedene administrativen Domänen sein können und somit ihre eigene Verwendungsregeln, andere Hard- oder Softwarekonfiguration haben können, stellt die Interoperabilität und Sicherheit das Hauptanliegen für die Gridinfrastruktur dar.\cite{360-degree-compared}
-\hl{Grid ist also schon vom Konzept her in der Lage diesen Herausforderungen stand zu halten.}\todo{evtl. Zitat}
+Was so interpretiert werden kann, dass Grid schon vom Konzept her in der Lage sein sollte diesen Herausforderungen stand zu halten.
 
 Die Grid Architektur besteht aus fünf verschiedenen Schichten. Jede einzelne Schicht hat einen spezifischen Zweck und stellt entsprechende Protokolle bereit \cite{360-degree-compared}:
 
 \begin{itemize}
-\item \textbf{\textit{Fabric layer}} stellt Rechen-, Speicher-, Netzwerkressourcen bereit.
-\item \textbf{\textit{Connectivity layer}} definiert Kommunikations- und Authentifizierungsprotokolle.
-\item \textbf{\textit{Resource layer}} definiert unter anderem Protokolle zum Publizieren, Entdecken und Vermitteln von Ressourcen.
-\item \textbf{\textit{Collective layer}} zum Erfassen von Interaktionen zwischen Sammlungen von Ressourcen.
-\item \textbf{\textit{Application layer}} enthält Benutzeranwendungen, die auf den o.g. Protokollen aufbauen.
+\item \textbf{\textit{fabric layer}} stellt Rechen-, Speicher-, Netzwerkressourcen bereit.
+\item \textbf{\textit{connectivity layer}} definiert Kommunikations- und Authentifizierungsprotokolle.
+\item \textbf{\textit{resource layer}} definiert unter anderem Protokolle zum Publizieren, Entdecken und Vermitteln von Ressourcen.
+\item \textbf{\textit{collective layer}} zum Erfassen von Interaktionen zwischen Sammlungen von Ressourcen.
+\item \textbf{\textit{application layer}} enthält Benutzeranwendungen, die auf den o.g. Protokollen aufbauen.
 \end{itemize}
+
+Es gibt verschiedene Versionen wie man eine Cloud Architektur definieren kann. Eine vierschichtige Cloud Architektur im Vergleich zu Grid besteht aus folgenden Schichten:
+\textbf{\textit{fabric layer}}, \textbf{\textit{unified resource layer}}, \textbf{\textit{platform layer}}, \textbf{\textit{application layer}}.
+Wobei \textit{fabric layer} einen Hardwarelayer darstellt, \textit{unified resource layer} abstrahierte Ressourcen wie z.B. virtuelle Maschinen enthält, \textit{platform layer} spezielle Tools und Middleware zum Bereitstellen einer Enwicklungs-/Bereitstellungsplattform enthält und \textit{application layer} Anwendungen beinhaltet, die auf der Cloud laufen.\cite{360-degree-compared}
 
 % In der Abbildung \ref{gvc} wird die Grid Protokollarchitektur mit der Cloud Architektur vergleichend dargestellt.
 

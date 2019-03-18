@@ -3,7 +3,7 @@
 Bei den Cloud Architekturen gibt es genau 3 verschiedene Rollen:
 \begin{enumerate}
 	\item \textbf{Provider:} bietet Cloud Produkte/Lösungen an
-	\item \textbf{Konsumenten:} konsumieren Cloudlösungen
+	\item \textbf{Konsumenten:} konsumiert Cloudlösungen
 	\item \textbf{Klient:} nehmen Cloudlösungen (Anwendungen/Daten) in Anspruch
 \end{enumerate}
 
@@ -26,7 +26,7 @@ auf andere Hardware Ressourcen weitergeleitet.
 
 Alle Kategorien von Cloud-Computing können sogenannte Sicherheitsperimeter verwenden. Diese Regeln den Zugriff auf die Ressource.
 In unseren Beispielen kann ein Klient, der sich außerhalb des Sicherheitsperimeter befindet, nur durch einen \glqq boundary controller\grqq
-Zugriff zum Netzwerk erlangen.
+Zugriff zum Netzwerk erlangen. \cite{Badger}
 
 \subsubsection{Lokale Private Cloud}
 
@@ -48,7 +48,7 @@ gespeichert werden. Dies hat den Vorteil, dass bei einem Serverausfall der Klien
 Außerdem muss der Konsument sicherstellen, dass wichtige Daten wie z.B. Lohnabrechnungen nicht von allen Klienten zugegriffen werden können,
 da verschiedenen Daten auf einer Maschine verarbeitet werden können. Der Nachteil von Privaten Clouds ist, dass es hohe Anschaffungskosten, wie z.B. 
 das Anschaffen von neuen Daten Zentren, gibt. Außerdem müssen bei z.B. steigenden Zugriffszahlen, neue Hardware vom Konsumenten bereitgestellt werden. 
-Dies verringert Flexibilität des Konsumenten.
+Dies verringert Flexibilität des Konsumenten. \cite{Badger}
 
 \subsubsection{Ausgelagerte Private Cloud}
 
@@ -69,7 +69,7 @@ Der Konsument ist in diesem Fall von der Netzwerkverfügbarkeit und -geschwindig
 Der Provider muss außerdem sicherstellen, dass die Arbeitslast auf den verschiedenen Maschinen innerhalb des Perimeters verteilt wird und sich die Daten 
 nicht mit den Daten von anderen Organisationen, außerhalb des Perimeters, vermischen.
 Der Vorteil dieser Architektur ist es, dass der Konsument keine eigenen Ressourcen mehr anschaffen muss und diese beim Provider mieten kann.
-Eine Erhöhung der verfügbaren Ressourcen kann jedoch vom Provider nur manuell geschehen, sofern dieser über genug Ressourcen verfügt. 
+Eine Erhöhung der verfügbaren Ressourcen kann jedoch vom Provider nur manuell geschehen, sofern dieser über genug Ressourcen verfügt. \cite{Badger}
 
 \subsubsection{Lokale Community Cloud}
 
@@ -90,7 +90,7 @@ Außerdem müssen die Kommunikationskanäle geschützt und bei der Verwendung de
 können verschiedene Level der Performance, Sicherheit und Zuverlässigkeit bereitstellen, abhängig von den Ansprüchen der Teilnehmenden Organisationen. Die Sicherheit der einzelnen Clouds hängt 
 hierbei von den den Sicherheitsperimeter der einzelnen Organisationen ab. Ein großer Nachteil dieser Methode sind die hohen Kosten der einzelnen Provider, die Ressourcen 
 anschaffen und Services konfigurieren müssen. Die Konsumenten hingegen zahlen nur die Mietkosten der für die Verwendungen der einzelnen Clouds. Ein weiterer Nachteil ist, dass 
-die Ressourcen lokal bereitgestellt werden und somit limitiert sind. Wodurch die Flexibilität der einzelnen Organisationen sinkt.
+die Ressourcen lokal bereitgestellt werden und somit limitiert sind. Wodurch die Flexibilität der einzelnen Organisationen sinkt. \cite{Badger}
 
 \subsubsection{Ausgelagerte Community Cloud}
 
@@ -99,7 +99,7 @@ Um die Serverseitige Verantwortung kümmert sich hier der Provider, der ein Sich
 die Community Ressourcen und die Cloud Provider Ressourcen, die sich außerhalb des Perimeters befinden, nicht vermischen. Ein wesentlicher Unterschied zur Ausgelagerten Privaten Cloud
 besteht darin, dass der Cloud Provider möglicherweise eine Freigaberichtlinie zwischen den teilnehmenden Unternehmen der Community Cloud durchsetzen muss. 
 Um den Organisationen der Community Konsumenten eine Verbindung zur Cloud zu ermöglichen, müssen sichere Kommunikationskanäle zwischen den einzelnen Organisationen und 
-dem Provider installiert werden. 
+dem Provider installiert werden. \cite{Badger}
 
 \begin{figure}[H]
     \centering
@@ -131,7 +131,7 @@ Außerdem haben die Konsumenten keine Möglichkeit die Einsicht ihrer Daten zu �
 Daten durchführen, um die Tatsächliche Datennutzung zu ermitteln und den Konsumenten diese dann in Rechnung zu stellen, ist diese Methode nicht für sensible oder wichtige Daten geeignet.
 Außerdem kann der Konsument nie sicher sein, ob sein Daten auch gelöscht werden, wenn er den Vertrag kündigt. 
 Ein großer Vorteil der Public Cloud ist die Uneingeschränktheit in Hinsicht des Standortes und der Größe. D.h. die Größe der zur Verfügung gestellten Ressourcen lässt sich 
-meist \glqq uneingeschränkt\grqq erhöhen oder vermindern.
+meist \glqq uneingeschränkt\grqq erhöhen oder vermindern. \cite{Badger}
 
 Bekannte Public Cloud Provider sind Amazon Web Services (AWS) und Microsoft Azure. 
 
@@ -152,13 +152,13 @@ In diesem Abschnitt werden die Architekturen der drei Dienstmodelle SaaS, PaaS, 
 
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.4\textwidth, height=8cm]{Images/SaaSInteraction}
+	\includegraphics[width=0.4\textwidth]{Images/SaaSInteraction}
 	\caption{SaaS Interaktion \cite{Badger}}
 	\label{SaaSInteraction}
 \end{figure}
 Wie bereits in Abschnitt \ref{IaaS} beschrieben, stellt der Provider den Klienten Anwendungen (\glqq Apps\grqq) zu Verfügung.
 Diese Anwendungen können dann über das öffentliche Internet (Webseiten) aufgerufen werden.
-Wie in \textbf{Abbildung \ref{SaaSInteraction}.A} zu sehen ist, kann ein Provider mehrere Apps anbieten und ausführen.
+Wie in \textbf{Abbildung \ref{SaaSInteraction}} zu sehen ist, kann ein Provider mehrere Apps anbieten und ausführen.
 Er hat dabei eine gewisse Anzahl an \glqq Execution Ressources\grqq (exr) zur Verfügung. 
 Dabei wird den Klienten bei jedem starten einer Anwendung eine exr zugewiesen. Sollten neue Klienten hinzukommen, werden ihm verbleibende Ressourcen (exr) zugewiesen. 
 
@@ -174,7 +174,7 @@ Bei Software as a Service hat der Konsument nur die Kontrolle auf der Benutzereb
 Der Provider hingegen verfügt die totale Kontrolle über alle Bereiche. Diese muss ist Verantwortlich für das Erstellen, konfigurieren und Verwalten der Anwendungen, 
 sodass der Konsument diesen Service nutzen kann.
 Bei der Middleware Schicht kann der Provider sowohl über die Software Bibliotheken, als auch Datenbankenservices entscheiden, der Konsument hat darauf keinen Einfluss.
-Das selbe gilt bei der Wahl des Betriebssystems und der Hardware, bei der der Konsument keinen Einfluss hat.
+Das selbe gilt bei der Wahl des Betriebssystems und der Hardware, bei der der Konsument keinen Einfluss hat. \cite{Badger}
 
 \subsubsection*{Vorteile von SaaS}
 
@@ -190,7 +190,7 @@ Lösung, um die Anwendung zu betreiben, wie \textbf{Abbildung \ref{SaaSM1}} zeig
 
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/SaaSM1}
+	\includegraphics[width=0.45\textwidth]{Images/SaaSM1}
 	\caption{Möglichkeit 1 \cite{Badger}}
 	\label{SaaSM1}
 \end{figure}
@@ -201,14 +201,14 @@ Ein großer Nachteil dieses Szenarios ist es, dass hohe Kosten für das Betreibe
 
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/SaaSM2}
+	\includegraphics[width=0.4\textwidth]{Images/SaaSM2}
 	\caption{Möglichkeit 2 \cite{Badger}}
 	\label{SaaSM2}
 \end{figure}
 
 Beim statischen Szenario (\textbf{Abbildung \ref{SaaSM2}}) wird die Anwendung vom Provider so implementiert, sodass mehrere Klienten gleichzeitig daran arbeiten können und die Daten in nur einem Datenbanksystem gespeichert werden. 
 Dies hat den Vorteil das die Kosten für den Provider gesenkt werden, da nur noch eine Anwendung betrieben wird.
-Die Anwendung selbst, muss dafür aber die Daten mehrerer Klienten gleichzeitig verarbeiten und trotzdem sicherstellen, dass die Sicherheit der Daten gewährleistet ist.   
+Die Anwendung selbst, muss dafür aber die Daten mehrerer Klienten gleichzeitig verarbeiten und trotzdem sicherstellen, dass die Sicherheit der Daten gewährleistet ist. \cite{Badger}
 
 \subsubsection{Paas}
 \todo{eventuell text anpassen}
@@ -234,36 +234,85 @@ Außerdem kann ein Provider ebenfalls Entwicklungswerkzeuge anbieten, die von de
 \end{figure}
 
 Bei der Kontrolle der Schichten hat der Provider nur noch die Kontrolle über das Betriebssystem und die Hardware, wie die \textbf{Abbildung \ref{PaaSControl}} zeigt.
-Sollte der Provider noch Entwicklungswerkzeuge anbieten so behält er die Administrative Kontrolle über diese Werkzeuge. Der Konsument hingegen hat im gegensatz zu SaaS,
-die volle Kontrolle über die Anwendungen und falls er keine Entwicklungswerkzeuge nutzt, über die Middleware Schicht.
+Sollte der Provider noch Entwicklungswerkzeuge anbieten, so behält er die Administrative Kontrolle über diese Werkzeuge. Der Konsument hingegen hat im gegensatz zu SaaS,
+die volle Kontrolle über die Anwendungen und falls er keine Entwicklungswerkzeuge nutzt, über die Middleware Schicht. \cite{Badger}
 
 \subsubsection*{Vorteile von PaaS}
 
+PaaS teilt viele der Vorteile von SaaS, aber im gegensatz zu SaaS hat der Konsument mehr Freiheiten und Kontrolle über die Anwendungen.
+Wobei bei SaaS der Konsument und seine Klienten von der Anwendung des Providers abhängig sind. Dies verschafft den Konsumenten eine deutliche erhöhte Sicherheit über den Ablauf
+der Anwendung und seiner Daten.
+Der Provider kümmert sich weiterhin um ein stabiles und sicheres Netzwerk, dass eine hohe Performance von verschiedenen Standorten der Welt verspricht.
+Außerdem sind auch hier die Ressourcen skalierbar, dass dem Konsumenten Flexibilität ermöglicht. 
+
 \subsubsection{IaaS}
-aaa
+Bei Infrastructure as a Service erhält der Konsument eigene Virtuelle Maschinen, die er verwalten und konfigurieren kann. Dabei bieten verschiedene Anbieter auch mehrere Betriebsysteme an, z.B.
+Linux- oder Windowsserver. Hier muss der Konsument sich ebenfalls um die Installation und Verwaltung der einzelnen Bibliotheken, sowie die Installation einer Datenbank oder Middleware (z.B. Java) kümmern.
+Somit erhöht sich der allgemeine Verwaltungsaufwand des Konsumenten. Der Provider hingegen stellt nur noch die Ressourcen und die Verfügbarkeit der virtuellen Maschinen zur Verfügung. 
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/IaaSInteraction}
+	\includegraphics[width=0.4\textwidth]{Images/IaaSInteraction}
 	\caption{IaaS Interaktion \cite{Badger}}
 	\label{IaaSInteraction}
 \end{figure}
 
-aaa
+In \textbf{Abbildung \ref{IaaSInteraction}} sieht man, dass der Provider eine bestimmte Menge (N) an Virtuellen Maschinen den Konsumenten zur Verfügung stellt. Klienten können dann über ein Netzwerk, 
+auf diese VMs zugreifen.
+%Eventuell kürzen
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/IaaSControl}
+	\includegraphics[width=0.4\textwidth]{Images/IaaSControl}
 	\caption{IaaS Kontrollverteilung \cite{Badger}}
 	\label{IaaSControl}
 \end{figure}
-
+Im Softwarestack (\textbf{Abbildung \ref{IaaSControl}}) sieht man, das der Provider nur noch die Kontrolle auf Hardware und den Hypervisor besitzt. Ein Hypervisor ist ein Virtual Maschine Monitor(VMM), der die Hardware
+verwendet, um eine oder mehrere Virtuelle Maschinen (VM) zu erstellen, dabei ist jede VM eine effiziente, isoliertes kopie einer realen Maschine.
+Im gegensatz dazu kontrolliert der Konsument das Gast Betriebssystem, die Middleware (z.B. Java) und die Anwendung. \cite{Badger}
+%Eventuell kürzen
 \subsection{Logische Sichtweise}
-aaaaaaaaa
+
+%Um die Funktionsweise eines IaaS Systems zu verstehen, gehen wir in diesem Abschnitt näher auf die einzelnen Komponenten einer Cloud ein.
+
+Eine IaaS Cloud muss Ressourcen sowohl leistungs-als auch kosteneffizient bereitstellen, wobei die Fähigkeit zur Skalierung ohne Unterbrechung des Betriebs erhalten bleiben muss.
+Um die Funktionsweise eines IaaS Systems zu verstehen, gehen wir in diesem Abschnitt näher auf die einzelnen Komponenten einer Cloud ein.
 \begin{figure}[H]
     \centering
-	\includegraphics[width=0.5\textwidth]{Images/IaaSLogic}
+	\includegraphics[width=0.4\textwidth]{Images/IaaSLogic}
 	\caption{IaaS Logische Sichtweise (vgl. \cite{Badger})}
 	\label{IaaSLogic}
 \end{figure}
 
-% \subsection{Management}
-%\pagebreak
+
+Wie in \textbf{Abbildung \ref{IaaSLogic}} zu sehen ist, besteht eine IaaS Cloud aus drei Teilen:
+\begin{enumerate}
+	\item Cloud Manager
+	\item Cluster Manager
+	\item Computer Manager
+\end{enumerate}
+
+\subsubsection{Cloud Manager}
+Die einzelnen Nutzer greifen über ein Netzwerk auf den Cloud Manager zu. Dieser ist ein öffentlicher Zugangspunkt zur Cloud, der für die Benutzerverwaltung (Erstellen/Verwalten) zuständig ist. 
+Außerdem ist er für die Generierung von Kryptongraphische Schlüssel zuständig, die Benutzer verwenden, um mit ihren VMs zu kommunizieren.
+Zusätzlich kümmert er sich um die Top-Level Ressourcen Verwaltung, wie z.B. besitzt die Cloud genug Ressourcen für die Anfrage und welcher Cluster Manager besitzt die benötigten freien Ressourcen.
+Sollte ein Cluster Manager genügend freie Ressourcen besitzen, bestätigt der Cloud Manager die Reservierung der Ressourcen mit diesem und Koordiniert den Aufbau des virtuellen Netzwerks, damit der Verbraucher einheitlich auf alle Ressourcen zugreifen kann.
+Dafür verbindet er sich mit Data Object Storage (DOS), der für die Konsumenten validierung zuständig ist. Dies wird für Administrative- und Abrechnungszwecke verwendet. \cite{Badger}
+
+\subsubsection{Cluster Manager}
+Ein Cluster Manager ist für die Operationen von mehreren Computer verantwortlich, die mit einem High-Speed LAN verbunden sind. Ein solches Computercluster kann mehrere Tausend Computer beinhalten,
+die geographisch voneinander getrennt sein können.
+Der Cluster Manager erhält Ressourcen Reservierungsanfragen vom Cloud Manager, die er mit den zur Verfügung stehenden Ressourcen eines oder mehreren Computern abgleicht. Dieser sendet nach der 
+Berechnung eine Antwort, ob die Anfrage ganz oder zum Teil von diesem Cluster übernommen werden kann. Wenn der Cloud Manager den Befehl zur Reservierung der Ressourcen sendet, leitet der Cluster Manager diese Anfrage
+an den Computer Manager weiter. 
+Die Verbindung zum Persistent Local Storage (PLS) wird dafür verwendet, da Virtuelle Maschinen einen Persistenten Disk Speicher benötigen, um dessen Arbeit aufrecht zu erhalten, während die Zuweisung der virtuellen Maschine sich ändert.
+D.h. Virtuelle Maschinen sind nicht an einzelne Computer gebunden. \cite{Badger}
+
+\subsubsection{Computer Manager}
+
+Auf der unteren Ebene arbeitet ein Computer Manager mit den Hypervisor, die auf jeder Maschine in einem Cluster laufen.
+Auf Anfrage der Cluster Managers antwortet der Computer Manager auf Statusanfragen. Ein Computer Manager verwendet die Befehlsschnittstelle seines Hypervisors, um Virtuelle Maschinen anzulegen, löschen, rekonfigurieren und Einstellungen des Virtuellen Netzwerks einzustellen.
+Der Computer Manager ist außerdem verantwortlich für die Optimierung der Ressourcen. Da verschiedene Daten von verschiedenen Konsumenten auf einer Computer laufen können, muss der Hypervisor sich darum kümmern, dass es keine Datenvermischung geben darf.
+Die Arbeitslast eines Konsumenten kann dabei auch von mehreren Computern, sowie Clustern verarbeitet werden. 
+Ein Methode für das Ressourcen Management, ist das Verteilen der Arbeitslast von gering ausgelasteten Maschinen auf bereits hoch ausgelastete Maschinen. Dies hat den Vorteil, dass einzelne Maschinen abgeschaltet werden können um Ressourcen einzusparen oder Wartungsarbeiten auf einzelne Maschinen durchzuführen.
+Darüber hinaus können Provider mit Hilfe der Virtualisierung transparent neue Kapazitäten in Form von zusätzlichen Computern innerhalb von Clustern oder zusätzlichen Clustern hinzufügen, um der wachsenden Nachfrage nach Cloud-Diensten gerecht zu werden. \cite{Badger}
+
+\subsection{Cloud Applikation Architektur}

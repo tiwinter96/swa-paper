@@ -11,7 +11,7 @@ Ein Verbraucher kann sich selbst Rechenressourcen bereitstellen ohne mit einem M
 Ressourcen sind über das Netzwerk verfügbar und können über Standardmechanismen von heterogenen Clients genutzt werden\cite{nist_definition}.
 
 \textbf{Ressourcen Vereinigung}
-Die Rechenressourcen des Anbieters sind gebündelt, um mehrere Verbraucher zu bedienen und ihnen dynamisch physikalische oder virtuelle Ressourcen auf Nachfrage zuzuweisen. Dafür wird ein Multi-Tenant-Modell benutzt. Diese Ressourcen sind beispielsweise Speicherplatz, Rechenleistung oder Netzwerkbandbreite. Der Verbraucher hat in der Regel keine Kenntnis darüber, wo sich die bereitgestellten Ressourcen befinden.\cite{nist_definition}.
+Die Rechenressourcen des Anbieters sind gebündelt, um mehrere Verbraucher zu bedienen und ihnen dynamisch physikalische oder virtuelle Ressourcen auf Nachfrage zuzuweisen. Dafür wird ein Multi-Tenant-Modell benutzt. Diese Ressourcen sind beispielsweise Speicherplatz, Rechenleistung oder Netzwerkbandbreite. Der Verbraucher hat in der Regel keine Kenntnis darüber, wo sich die bereitgestellten Ressourcen befinden \cite{nist_definition}.
 
 \textbf{Schnelle Elastizität}
 Die Ressourcen können dehnbar freigegeben und bereitgestellt werden, teilweise automatisch, um entsprechend der Nachfrage skalieren zu können\cite{nist_definition}.
@@ -41,7 +41,7 @@ Diese Art von Cloud-Infrastruktur wird ausschließlich für eine spezielle Gemei
 Diese Art von Cloud-Infrastruktur wird für die Öffentlichkeit bereitgestellt. Die Infrastruktur wird von einem Unternehmen oder staatlichen Einrichtung selbst betrieben und verwaltet. Die Infrastruktur befindet sich in den Räumlichkeiten des Cloud-Providers\cite{nist_definition}.
 
 \subsubsection{Hybrid Cloud}
-Diese Art von Cloud-Infrastruktur ist ein Verbund aus zwei oder mehreren Cloud-Infrastrukturen(private, community oder public), welche weiterhin einzeln bestehen, aber mithilfe von standardisierten oder propietären Technologien die Portabilität von Daten und Anwendungen ermöglichen\cite{nist_definition}. Ein Teil der Service-Infrastruktur wird in der private Cloud bewältigt und ein anderer Teil in der Public Cloud. Das bietet eine bessere Kontrolle über die Daten und dennoch eine Möglichkeit Ressourcen nach Bedarf zu nutzen\cite{study_cc_cdb}.
+Diese Art von Cloud-Infrastruktur ist ein Verbund aus zwei oder mehreren Cloud-Infrastrukturen(private, community oder public), welche weiterhin einzeln bestehen, aber mithilfe von standardisierten oder propietären Technologien die Portabilität von Daten und Anwendungen ermöglichen\cite{nist_definition}. Ein Teil der Service-Infrastruktur wird in der private Cloud bewältigt und ein anderer Teil in der Public Cloud. Das bietet eine bessere Kontrolle über die Daten und dennoch eine Möglichkeit Ressourcen nach Bedarf zu nutzen \cite{study_cc_cdb}.
 
 \subsection{Besonderheiten}
 \subsubsection{Konsistenz}
@@ -56,7 +56,7 @@ Das CAP-Theorem\cite{CAP} von Eric Brewer besagt, dass jedes System mit im Netzw
 Cloud-Speicherdienste, die zu den typischen Cloud-Diensten gehören, speichern ihre Daten redundant auf geographisch verteilten Servern, um somit einen rund um die Uhr Zugriff auf die Daten zu gewährleisten.
 Bei redundanten Speichertechniken in Clouds, insbesonderen wenn die Skalierung eine weltweite Größe erreicht, wird es sehr schwierig eine strenge Konsistenz zu erreichen. Viele Anbieter der Cloud Dienste z.B. Amazon S3 können nur eine schwache Konsistenz
 % , wie die \textit{kausale Konsistenz}, 
-sicherstellen. Solche schwachen Konsistenzen erlauben eine bessere Performanz und hohe Verfügbarkeit, dafür kann es passieren, dass die Benutzer für eine bestimmte Zeit noch die alten Daten lesen.\cite{consistency-as-a-service} 
+sicherstellen. Solche schwachen Konsistenzen erlauben eine bessere Performanz und hohe Verfügbarkeit, dafür kann es passieren, dass die Benutzer für eine bestimmte Zeit noch die alten Daten lesen \cite{consistency-as-a-service}.
 
 \subsubsection{Sicherheit}
 Der Aspekt der Sicherheit gehört ebenso zu den Besonderheiten im Cloud Computing. So werden in \cite{seven-seq-risks} sieben spezielle Sicherheitsproblemme genannt, die von Kunden bzw. von Unternehmen bei der Wahl eines Cloud Anbieters beachtet werden sollen:

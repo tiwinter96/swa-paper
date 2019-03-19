@@ -5,18 +5,16 @@ Diese Idee, oder zumindest eine ähnliche, entstand schon vor mehreren Jahren mi
 Im folgenden Abschnitt werden einige Aspekte erläutert, die den Unterschied zwischen Cloud Computing und Grid Computing verdeutlichen.
  
 \subsection{Der Begriff \glqq Grid Computing\grqq}
-In \cite{grid-checklist} schlägt der Autor eine 3-Punkte-Checkliste vor, anhand deren sich ein Grid-System identifizieren lässt. Demnach ist Grid ein System, das:
+In \cite{grid-checklist} schlägt der Autor eine 3-Punkte-Checkliste vor, anhand deren sich ein Grid-System identifizieren lässt. Demnach ist Grid ein System, dass:
 \begin{enumerate}
   \item Ressourcen koordiniert, die keiner zentralisierten Kontrolle unterliegen
   \item dabei offene und allgemeine Standardprotokolle und Schnittstellen verwendet
   \item um nicht-triviale \glqq Quality of Services\grqq{} zu liefern
 \end{enumerate}
 
-Cloud Computing überschneidet sich nicht nur mit Grid Computing, es ist in der Tat aus Grid Computing entstanden und bildet dessen Rückgrad auf dem seine Infrastruktur aufbaut\cite{360-degree-compared}.
-
-Das spezielle Problem, das dem Konzept des Grids in Wirklichkeit zugrunde liegt,
+Cloud Computing überschneidet sich nicht nur mit Grid Computing, es ist in der Tat aus Grid Computing entstanden und bildet dessen Rückgrat auf dem seine Infrastruktur aufbaut \cite{360-degree-compared}. Das spezielle Problem, das dem Konzept des Grids in Wirklichkeit zugrunde liegt,
 ist die koordinierte gemeinsame Nutzung von Ressourcen und das Lösen von Problemen
-in einer dynamischen institutionsübergreifenden virtuellen Organisation.
+in einer dynamischen institutionenübergreifenden virtuellen Organisation.
 Dabei ist mit \glqq gemeinsamer Nutzung\grqq{} der direkte Zugang zu Computern, Software, Daten und anderen Ressourcen,
 die für das Lösen von Problemen in industriellen, wissenschaftlichen und technischen Bereichen benötigt werden, zu verstehen.
 Das Teilen der Ressourcen beinhaltet klar definierte Regeln, die notwendigerweise stark kontrolliert werden.
@@ -36,8 +34,6 @@ Der Zugriff auf die verschiedenen Arten von Anwendungen kann über sogenannte \t
 Typischerweise ist das Geschäftsmodell der Grids (zumindest im akademischen Bereich) projektorientiert und die Anwender oder die Community hat eine bestimmte Anzahl an Serviceeinheiten, die verbraucht werden können\cite{360-degree-compared}.  
 Dieses Konzept wird beispielsweise von XSEDE (Extreme Science and Engineering Discovery Environment) -- einem Anbieter von digitalen Dienstleistungen wie Supercomputern -- verwendet\cite{xsede}.
 Wenn eine Institution mit ihren eigenen Ressourcen einem solchen Netzwerk beitritt stellt sie diese zur Nutzung für die Community bereit und kann auf die Ressourcen der anderen zugreifen\cite{360-degree-compared}.
-
-
 
 \subsection{Architektur}
 Die Grid-Netze konzentrieren sich auf die Integration vorhandener Ressourcen mit ihrer Hardware, Betriebssystemen, lokalem Ressourcenmanagement und der Sicherheitsinfrastruktur.
@@ -85,17 +81,17 @@ Wobei \textit{fabric layer} einen Hardwarelayer darstellt, \textit{unified resou
 % \end{figure}
 
 \subsection{Ressourcenverwaltung}
-Während Grid Computing versucht Ressourcen zu bündeln, die innerhalb unterschiedlicher Organisationen sich befinden, bietet Cloud Computing diese meistens innerhalb einer einzelnen Organisation an. Dies vereinfacht unter anderem solche Aspekte wie Sicherheit, Verfügbarkeit und Heterogenität\cite{comp-cloud-grid-cluster-virt}.
+Während Grid Computing versucht Ressourcen zu bündeln, die innerhalb unterschiedlicher Organisationen sich befinden, bietet Cloud Computing diese meistens innerhalb einer einzelnen Organisation an. Dies vereinfacht unter anderem solche Aspekte wie Sicherheit, Verfügbarkeit und Heterogenität \cite{comp-cloud-grid-cluster-virt}.
 Die Ressourcen einer virtuellen Organisation können geographisch verteilt sein.
 
-Der Einsatz von Middlewareanwendungen bietet eine zusätzliche Schicht an Homogenität, um das Problem mit der heterogenen Hard- und Software etwas zu lindern. Dadurch wird die Ressourcenverwaltung innerhalb der virtuellen Organisationen vereinfacht. Jedoch bleibt die Entwicklung der Grid-übergreifenden Anwendungen, die mehrere virtuelle Organisationen betreffen immer noch schwierig.\cite{McEvoy:2008:UCA:1462704.1462715}
+Der Einsatz von Middlewareanwendungen bietet eine zusätzliche Schicht an Homogenität, um das Problem mit der heterogenen Hard- und Software etwas zu lindern. Dadurch wird die Ressourcenverwaltung innerhalb der virtuellen Organisationen vereinfacht. Jedoch bleibt die Entwicklung der Grid-übergreifenden Anwendungen, die mehrere virtuelle Organisationen betreffen immer noch schwierig \cite{McEvoy:2008:UCA:1462704.1462715}.
 
-Grid Computing baut nicht so viel auf der Virtualisierung wie Cloud Computing, was allerdings daran liegen kann, dass jede einzelne Organisation ihre eigenen Ressourcen, die nicht notwendigerweise virtualisiert sind, selbst verwalten will\cite{360-degree-compared}. 
+Grid Computing baut nicht so viel auf der Virtualisierung wie Cloud Computing, was allerdings daran liegen kann, dass jede einzelne Organisation ihre eigenen Ressourcen, die nicht notwendigerweise virtualisiert sind, selbst verwalten will \cite{360-degree-compared}. 
 
 Aus Benutzersicht werden Ressourcen bei Cloud Computing zentral verwaltet.
 Der Benutzer kann, im Web, vom Cloud Provider zur Verfügung gestellte Schnittstelle verwenden,
 um Ressourcen bei Bedarf flexibel auf Anforderung hinzuzufügen oder zu entfernen.
-Grid Computing ist in dieser Hinsicht dezentralisiert. Die Ressourcen können sich in unterschiedlichen virtuellen Organisationen befinden. Außerden ist eine flexible Erweiterung der Ressourcen nicht möglich. Um auf zusätzliche Ressourcen zugreifen zu können muss zuerst einer virtuellen Organisation beigetreten werden, was durch manuelle Genehmigungen eine längere Zeit dauern kann.
+Grid Computing ist in dieser Hinsicht dezentralisiert. Die Ressourcen können sich in unterschiedlichen virtuellen Organisationen befinden. Außerdem ist eine flexible Erweiterung der Ressourcen nicht möglich. Um auf zusätzliche Ressourcen zugreifen zu können muss zuerst einer virtuellen Organisation beigetreten werden, was durch manuelle Genehmigungen eine längere Zeit dauern kann.
 
 Während im Grid die Ressourcen meistens von einem lokalen Ressourcenmanager unter Verwendung von Batch-Scheduling verwaltet werden und die Berechnungen eins nach dem anderen abgearbeitet werden, sind in der Cloud alle Ressourcen für alle Benutzer zur gleichen Zeit verfügbar\cite{360-degree-compared}.
 

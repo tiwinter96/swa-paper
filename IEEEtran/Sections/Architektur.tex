@@ -26,7 +26,7 @@ Alle Kategorien von Cloud-Computing können sogenannte Sicherheitsperimeter verw
 
 \subsubsection{Lokale Private Cloud}
 Klienten, die sich innerhalb des Sicherheitsperimeters befinden, können sich mit der privaten Cloud verbinden(siehe \textbf{Abbildung \ref{PrivateCloud}}). 
-Klienten von außerhalb, können eine Verbindung durch den \glqq boundary controller\grqq{}{}{}{} aufbauen. Die Cloud und die Sicherheitsperimeter werden von dem Konsumenten verwaltet.
+Klienten von außerhalb, können eine Verbindung durch den \glqq boundary controller\grqq{} aufbauen. Die Cloud und die Sicherheitsperimeter werden von dem Konsumenten verwaltet.
 \begin{figure}[h]
     \centering
 	\includegraphics[width=0.5\textwidth]{Images/On-sitePrivateCloud}
@@ -41,18 +41,16 @@ da verschiedenen Daten auf einer Maschine verarbeitet werden können. Der Nachte
 \subsubsection{Ausgelagerte Private Cloud}
 
 Bei der ausgelagerten Privaten Cloud, wird die Cloud zu einem Provider verlagert. Dieser separiert das Organisationsnetzwerk
-von seinem \glqq öffentlichen\grqq{}{}{}{} Netzwerk, wie in \textbf{Abbildung \ref{OutSourcedPrivateCloud}} zu sehen ist. Das Netzwerk wird vom Provider
+von seinem \glqq öffentlichen\grqq{}Netzwerk, wie in \textbf{Abbildung \ref{OutSourcedPrivateCloud}} zu sehen ist. Das Netzwerk wird vom Provider
 durch einen Sicherheitsperimeter geschützt. Der Provider muss dabei sicherstellen, dass die Sicherheitsanforderungen des Konsumenten erfüllt werden. 
 Der Konsument kann ebenfalls einen Sicherheitsperimeter in seiner Organisation installieren, um den Zugriff zur Cloud zu regeln.
 Die beiden Perimeter werden dann durch einen Kommunikationskanal verbunden und Klienten können dann nur über diesen Kanal auf Daten der Cloud zugreifen.
-
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
 	\includegraphics[width=0.5\textwidth]{Images/OutSourcedPrivateCloud}
 	\caption{Ausgelagerte Private Cloud \cite{Badger}}
 	\label{OutSourcedPrivateCloud}
 \end{figure}
-
 Der Konsument ist in diesem Fall von der Netzwerkverfügbarkeit und -geschwindigkeit des Providers abhängig, kann die Geschwindigkeit aber durch Sondertarife erhöhen.
 Der Provider muss außerdem sicherstellen, dass die Arbeitslast auf den verschiedenen Maschinen innerhalb des Perimeters verteilt wird und sich die Daten 
 nicht mit den Daten von anderen Organisationen, außerhalb des Perimeters, vermischen.

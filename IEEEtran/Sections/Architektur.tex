@@ -264,13 +264,12 @@ Ein Cluster Manager ist für die Operationen von mehreren Computer verantwortlic
 Der Cluster Manager erhält Ressourcen Reservierungsanfragen vom Cloud Manager, die er mit den zur Verfügung stehenden Ressourcen eines oder mehreren Computern abgleicht. Dieser sendet nach der 
 Berechnung eine Antwort, ob die Anfrage ganz oder zum Teil von diesem Cluster übernommen werden kann. Wenn der Cloud Manager den Befehl zur Reservierung der Ressourcen sendet, leitet der Cluster Manager diese Anfrage an den Computer Manager weiter. 
 Die Verbindung zum Persistent Local Storage (PLS) wird dafür verwendet, da virtuelle Maschinen einen Persistenten Disk Speicher benötigen, um dessen Arbeit aufrecht zu erhalten, während die Zuweisung der virtuellen Maschine sich ändert.
-D.h. Virtuelle Maschinen sind nicht an einzelne Computer gebunden\cite{Badger}.
+D.h. virtuelle Maschinen sind nicht an einzelne Computer gebunden\cite{Badger}.
 
 \subsubsection{Computer Manager}
-
 Auf der unteren Ebene arbeitet ein Computer Manager mit den Hypervisor, die auf jeder Maschine in einem Cluster laufen.
-Auf Anfrage der Cluster Managers antwortet der Computer Manager auf Statusanfragen. Ein Computer Manager verwendet die Befehlsschnittstelle seines Hypervisors, um Virtuelle Maschinen anzulegen, löschen, rekonfigurieren und Einstellungen des Virtuellen Netzwerks einzustellen.
-Der Computer Manager ist außerdem verantwortlich für die Optimierung der Ressourcen. Da verschiedene Daten von verschiedenen Konsumenten auf einer Computer laufen können, muss der Hypervisor sich darum kümmern, dass es keine Datenvermischung geben darf.
+Auf Anfrage der Cluster Managers antwortet der Computer Manager auf Statusanfragen. Ein Computer Manager verwendet die Befehlsschnittstelle seines Hypervisors, um virtuelle Maschinen anzulegen, löschen, rekonfigurieren und Einstellungen des virtuellen Netzwerks einzustellen.
+Der Computer Manager ist außerdem verantwortlich für die Optimierung der Ressourcen. Da verschiedene Daten von verschiedenen Konsumenten auf einer Computer laufen können, muss der Hypervisor sich darum kümmern, das es keine Datenvermischung gibt.
 Die Arbeitslast eines Konsumenten kann dabei auch von mehreren Computern, sowie Clustern verarbeitet werden. 
-Ein Methode für das Ressourcen Management, ist das Verteilen der Arbeitslast von gering ausgelasteten Maschinen auf bereits hoch ausgelastete Maschinen. Dies hat den Vorteil, dass einzelne Maschinen abgeschaltet werden können um Ressourcen einzusparen oder Wartungsarbeiten auf einzelne Maschinen durchzuführen.
-Darüber hinaus können Provider mit Hilfe der Virtualisierung transparent neue Kapazitäten in Form von zusätzlichen Computern innerhalb von Clustern oder zusätzlichen Clustern hinzufügen, um der wachsenden Nachfrage nach Cloud-Diensten gerecht zu werden. \cite{Badger}
+Eine Methode für das Ressourcen Management, ist das Verteilen der Arbeitslast von gering ausgelasteten Maschinen auf bereits hoch ausgelastete Maschinen. Dies hat den Vorteil, dass einzelne Maschinen abgeschaltet werden können um Ressourcen einzusparen oder Wartungsarbeiten auf einzelnen Maschinen durchzuführen.
+Darüber hinaus können Provider mithilfe der Virtualisierung transparent neue Kapazitäten in Form von zusätzlichen Computern innerhalb von Clustern oder zusätzlichen Clustern hinzufügen, um der wachsenden Nachfrage nach Cloud-Diensten gerecht zu werden\cite{Badger}.

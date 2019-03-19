@@ -46,10 +46,10 @@ Der Kunde hat hier die Möglichkeit, die bereitgestellten laufenden Anwendungen 
 
 \subsection{Kategorien}
 \subsubsection{Private Cloud}
-Diese Art von Cloud-Infrastruktur wird aussschließlich für eine einzige Organisation und ihren Mitarbeitern bereitgestellt. Die Infrastruktur kann besitzt, verwaltet und betrieben werden von der Organisation selbst, einer dritten Partei oder eine Kombination der beiden. Dabei kann die Infrastruktur innerhalb oder außerhalb der Räumlichkeiten der Organisation liegen\cite{nist_definition}.
+Diese Art von Cloud-Infrastruktur wird ausschließlich für eine einzige Organisation und ihren Mitarbeitern bereitgestellt. Die Infrastruktur kann besitzt, verwaltet und betrieben werden von der Organisation selbst, einer dritten Partei oder eine Kombination der beiden. Dabei kann die Infrastruktur innerhalb oder außerhalb der Räumlichkeiten der Organisation liegen\cite{nist_definition}.
 
 \subsubsection{Community Cloud}
-Diese Art von Cloud-Infrastruktur wird aussschließlich für eine spezielle Gemeinschaft an Verbrauchern mit einem gemeinsamen Interesse (bspw. Sicherheitsanforderungen oder Richtlinien) bereitgestellt. Die Infrastruktur kann besitzt, verwaltet und betrieben werden von einer oder mehreren Organisationen der Gemeinschaft selbst, einer dritten Partei oder eine Kombination der beiden. Dabei kann die Infrastruktur innerhalb oder außerhalb der Räumlichkeiten der Organisationen liegen\cite{nist_definition}.
+Diese Art von Cloud-Infrastruktur wird ausschließlich für eine spezielle Gemeinschaft an Verbrauchern mit einem gemeinsamen Interesse (bspw. Sicherheitsanforderungen oder Richtlinien) bereitgestellt. Die Infrastruktur kann besitzt, verwaltet und betrieben werden von einer oder mehreren Organisationen der Gemeinschaft selbst, einer dritten Partei oder eine Kombination der beiden. Dabei kann die Infrastruktur innerhalb oder außerhalb der Räumlichkeiten der Organisationen liegen\cite{nist_definition}.
 
 \subsubsection{Public Cloud}
 Diese Art von Cloud-Infrastruktur wird für die Öffentlichkeit bereitgestellt. Die Infrastruktur kann besitzt, verwaltet und betrieben werden von einem Unternehmen, staatlichen Einrichtung oder eine Kombination der beiden. Die Infrastruktur befindet sich in den Räumlichkeiten des Cloud-Providers\cite{nist_definition}.
@@ -57,4 +57,39 @@ Diese Art von Cloud-Infrastruktur wird für die Öffentlichkeit bereitgestellt. 
 \subsubsection{Hybrid Cloud}
 Diese Art von Cloud-Infrastruktur ist ein Verbund aus zwei oder mehreren Cloud-Infrastrukturen(private, community oder public), welche weiterhin einzeln bestehen, aber mithilfe von standardisierten oder propietären Technologien die Portabilität von Daten und Anwendungen ermöglichen\cite{nist_definition}. Ein Teil der Service-Infrastruktur wird in der private Cloud bewältigt und ein anderer Teil in der Public Cloud. Das bietet eine bessere Kontrolle über die Daten und dennoch eine Möglichkeit Ressourcen nach Bedarf zu nutzen\cite{study_cc_cdb}.
 
+\subsection{Besonderheiten}
+\subsubsection{Konsistenz}
+Wie jedes verteilte System haben auch Cloud-Architekturen Herausforderungen im Hinblick auf Konsistenz, Verfügbarkeit und Ausfallsicherheit zu meistern.
+Das CAP-Theorem\cite{CAP} von Eric Brewer besagt, dass jedes System mit im Netzwerk verteilten Daten höchstens zwei von den drei gewünschten Eigenschaften haben kann:
+\begin{itemize}
+	\item \textit{Konsistenz} (\textbf{C}onsistensy)
+	\item hohe \textit{Verfügbarkeit} (\textbf{A}vailability)
+	\item \textit{Toleranz} bezüglich der Netzwerkpartitionen (\textbf{P}artition Tolerance)
+\end{itemize}
 
+Cloud-Speicherdienste, die zu den typischen Cloud-Diensten gehören, speichern ihre Daten redundant auf geographisch verteilten Servern, um somit einen rund um die Uhr Zugriff auf die Daten zu gewährleisten.
+Bei redundanten Speichertechniken in Clouds, insbesonderen wenn die Skalierung eine weltweite Größe erreicht, wird es sehr schwierig eine strenge Konsistenz zu erreichen. Viele Anbieter der Cloud Dienste z.B. Amazon S3 können nur eine schwache Konsistenz
+% , wie die \textit{kausale Konsistenz}, 
+sicherstellen. Solche schwachen Konsistenzen erlauben eine bessere Performanz und hohe Verfügbarkeit, dafür kann es passieren, dass die Benutzer für eine bestimmte Zeit noch die alten Daten lesen.\cite{consistency-as-a-service} 
+
+\subsubsection{Sicherheit}
+Der Aspekt der Sicherheit gehört ebenso zu den Besonderheiten im Cloud Computing. So werden in \cite{seven-seq-risks} sieben spezielle Sicherheitsproblemme genannt, die von Kunden bzw. von Unternehmen bei der Wahl eines Cloud Anbieters beachtet werden sollen:
+
+\textbf{1. Priviligierter Benutzerzugang.} Verarbeitung von sensitiven Daten außerhalb der Unternehmen bringt ein Risiko und die Benutzer sollten sich darüber im Klaren sein.
+
+\textbf{2. Einhaltung gesetzlicher Vorschriften.} Kunden sind selbst verantwortlich für die Sicherheit und Ingetrität ihrer Daten, selbst wenn diese in der Cloud liegen.
+
+\textbf{3. Datenstandort.} Kunden sollen die Anbieter fragen, ob diese sich dazu verpflichten, Daten in bestimmten Rechtsordnungen zu speichern und zu verarbeiten, und ob diese eine vertragliche Verpflichtung eingehen, die lokalen Datenschutzbestimmungen für ihre Kunden einzuhalten.
+
+\textbf{4. Datentrennung.} Kundendaten sollten von Daten anderer Kunden getrennt sein. Provider sollen nachweisen können, dass die Verschlüsselungsschemas von Experten entworfen wurden.
+
+\textbf{5. Datenwiederherstellung.} Provider sollen Auskunft geben was mit den Daten im Falle einer Katastrophe passiert.
+
+\textbf{6. Ermittlungssunterstützung.} Die Untersuchung von unangemessenen oder illegalen Aktivitäten sollte von Cloud Anbietern unterstütz sein. 
+
+\textbf{7. Langfristige Rentabilität.} Daten sollten nicht verloren gehen, selbst wenn der Cloud Anbieter bankrott oder von einem anderen Unternehmen erworben wird.s
+
+% Diese drei Eigenschaften sind auch für das Cloud Computing von großer Bedeutung, da man hier mit einer horizontalen Skalierung zu tun hat.
+% Bei Ausfall eines Knotens, \hl{z.B. einer Instanz der Webanwendung}, soll sichergestellt werden, dass die Anwendung weiterhin verfügbar ist.
+
+% \hl{Sicherheit: 360 comparison. Seite 9, und SLA-Perspective paper ()}

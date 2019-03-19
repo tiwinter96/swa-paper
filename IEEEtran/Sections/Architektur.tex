@@ -164,105 +164,88 @@ ein professionelles Management System an, dass z.B. Compilance-Check (Datenschut
 
 \subsubsection{Funktionsweise von SaaS}
 
-Wie bereits erwähnt wird bei Starten einer Anwendung von einem Nutzer ein Prozess (exr) gestartet. Dabei haben die Provider meist eine statische oder eine dynamische
+Wie bereits erwähnt wird bei Start einer Anwendung von einem Nutzer ein Prozess (exr) gestartet. Dabei haben die Provider meist eine statische oder eine dynamische
 Lösung, um die Anwendung zu betreiben, wie \textbf{Abbildung \ref{SaaSM1}} zeigt.
-
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
 	\includegraphics[width=0.5\textwidth]{Images/SaaSM1}
 	\caption{Möglichkeit 1 \cite{Badger}}
 	\label{SaaSM1}
 \end{figure}
-
 In diesem Szenario wird eine aktive Kopie der Anwendung für jeden Benutzer gestartet. Jede Anwendung betreibt dabei ein eigenes Datenbanksystem, indem die Daten der Benutzer gespeichert werden.
 Somit besitzt jeder Klient eine eigene Kopie der Daten. Die einzelnen Kopien der Anwendung, der Datenbanksysteme und die Separierung der Benutzer wird durch das Betriebssystem ermöglicht.
 Ein großer Nachteil dieses Szenarios ist es, dass hohe Kosten für das Betreiben und Synchronisieren der einzelnen Datenbanksysteme entstehen.
-
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
 	\includegraphics[width=0.5\textwidth]{Images/SaaSM2}
 	\caption{Möglichkeit 2 \cite{Badger}}
 	\label{SaaSM2}
 \end{figure}
-
-Beim statischen Szenario (\textbf{Abbildung \ref{SaaSM2}}) wird die Anwendung vom Provider so implementiert, sodass mehrere Klienten gleichzeitig daran arbeiten können und die Daten in nur einem Datenbanksystem gespeichert werden. 
+Beim statischen Szenario(siehe \textbf{Abbildung \ref{SaaSM2}}) wird die Anwendung vom Provider so implementiert, sodass mehrere Klienten gleichzeitig daran arbeiten können und die Daten in nur einem Datenbanksystem gespeichert werden. 
 Dies hat den Vorteil das die Kosten für den Provider gesenkt werden, da nur noch eine Anwendung betrieben wird.
 Die Anwendung selbst, muss dafür aber die Daten mehrerer Klienten gleichzeitig verarbeiten und trotzdem sicherstellen, dass die Sicherheit der Daten gewährleistet ist. \cite{Badger}
 
-\subsubsection{Paas}
-\todo{eventuell text anpassen}
-Der Unterschied von Platform as a Service zu Software as a Service ist, dass Konsumenten die Möglichkeit haben, eigene Anwendungen bei dem Cloud Provider betreiben zu lassen.
-
-\begin{figure}[H]
+\subsubsection{PaaS}
+Der Unterschied von PaaS zu SaaS ist, dass Konsumenten die Möglichkeit haben, eigene Anwendungen bei dem Cloud Provider betreiben zu lassen.
+\begin{figure}[h]
     \centering
 	\includegraphics[width=0.5\textwidth]{Images/PaaSInteraction}
 	\caption{PaaS Interaktion \cite{Badger}}
 	\label{PaaSInteration}
 \end{figure}
-
 In der \textbf{Abbildung \ref{PaaSInteration}} wird gezeigt, wie sich die Interaktionen der einzelnen Nutzer verändern.
 Der Klient kann weiterhin auf die Anwendungen (A, B, C) zugreifen. Beim Zugreifen wird hier ebenfalls ein neuer Prozess (exr) gestartet. Der Unterschied hier ist aber, dass
 der Konsument für die Bereitstellung, Verwaltung, Aktualisierung der Anwendung zuständig ist. Der Provider bietet dem Konsumenten nur die Ressourcen um die Anwendung(en) zu betreiben.
 Außerdem kann ein Provider ebenfalls Entwicklungswerkzeuge anbieten, die von den Entwicklern des Konsumenten verwendet werden können (z.B. eigene Datenbank).
-
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
 	\includegraphics[width=0.5\textwidth]{Images/PaaSControl}
 	\caption{PaaS Kontrollverteilung \cite{Badger}}
 	\label{PaaSControl}
 \end{figure}
-
 Bei der Kontrolle der Schichten hat der Provider nur noch die Kontrolle über das Betriebssystem und die Hardware, wie die \textbf{Abbildung \ref{PaaSControl}} zeigt.
-Sollte der Provider noch Entwicklungswerkzeuge anbieten, so behält er die Administrative Kontrolle über diese Werkzeuge. Der Konsument hingegen hat im gegensatz zu SaaS,
+Sollte der Provider noch Entwicklungswerkzeuge anbieten, so behält er die Administrative Kontrolle über diese Werkzeuge. Der Konsument hingegen hat im Gegensatz zu SaaS,
 die volle Kontrolle über die Anwendungen und falls er keine Entwicklungswerkzeuge nutzt, über die Middleware Schicht. \cite{Badger}
 
 \subsubsection*{Vorteile von PaaS}
 
-PaaS teilt viele der Vorteile von SaaS, aber im gegensatz zu SaaS hat der Konsument mehr Freiheiten und Kontrolle über die Anwendungen.
+PaaS teilt viele der Vorteile von SaaS, aber im Gegensatz zu SaaS hat der Konsument mehr Freiheiten und Kontrolle über die Anwendungen.
 Wobei bei SaaS der Konsument und seine Klienten von der Anwendung des Providers abhängig sind. Dies verschafft den Konsumenten eine deutliche erhöhte Sicherheit über den Ablauf
 der Anwendung und seiner Daten.
 Der Provider kümmert sich weiterhin um ein stabiles und sicheres Netzwerk, dass eine hohe Performance von verschiedenen Standorten der Welt verspricht.
 Außerdem sind auch hier die Ressourcen skalierbar, dass dem Konsumenten Flexibilität ermöglicht. 
 
 \subsubsection{IaaS}
-Bei Infrastructure as a Service erhält der Konsument eigene Virtuelle Maschinen, die er verwalten und konfigurieren kann. Dabei bieten verschiedene Anbieter auch mehrere Betriebsysteme an, z.B.
+Bei Infrastructure as a Service erhält der Konsument eigene virtuelle Maschinen, die er verwalten und konfigurieren kann. Dabei bieten verschiedene Anbieter auch mehrere Betriebsysteme an, z.B.
 Linux- oder Windowsserver. Hier muss der Konsument sich ebenfalls um die Installation und Verwaltung der einzelnen Bibliotheken, sowie die Installation einer Datenbank oder Middleware (z.B. Java) kümmern.
-Somit erhöht sich der allgemeine Verwaltungsaufwand des Konsumenten. Der Provider hingegen stellt nur noch die Ressourcen und die Verfügbarkeit der virtuellen Maschinen zur Verfügung. 
-\begin{figure}[H]
+Somit erhöht sich der allgemeine Verwaltungsaufwand des Konsumenten. Der Provider hingegen stellt nur noch die Ressourcen und die virtuelle Maschine zur Verfügung. 
+\begin{figure}[h]
     \centering
 	\includegraphics[width=0.5\textwidth]{Images/IaaSInteraction}
 	\caption{IaaS Interaktion \cite{Badger}}
 	\label{IaaSInteraction}
 \end{figure}
-
-In \textbf{Abbildung \ref{IaaSInteraction}} sieht man, dass der Provider eine bestimmte Menge (N) an Virtuellen Maschinen den Konsumenten zur Verfügung stellt. Klienten können dann über ein Netzwerk, 
-auf diese VMs zugreifen.
-%Eventuell kürzen
-\begin{figure}[H]
+In \textbf{Abbildung \ref{IaaSInteraction}} sieht man, dass der Provider eine bestimmte Menge (N) an virtuellen Maschinen den Konsumenten zur Verfügung stellt. Klienten können dann über ein Netzwerk, auf diese VMs zugreifen.
+\begin{figure}[h]
     \centering
 	\includegraphics[width=0.5\textwidth]{Images/IaaSControl}
 	\caption{IaaS Kontrollverteilung \cite{Badger}}
 	\label{IaaSControl}
 \end{figure}
-Im Softwarestack (\textbf{Abbildung \ref{IaaSControl}}) sieht man, das der Provider nur noch die Kontrolle auf Hardware und den Hypervisor besitzt. Ein Hypervisor ist ein Virtual Maschine Monitor(VMM), der die Hardware
-verwendet, um eine oder mehrere Virtuelle Maschinen (VM) zu erstellen, dabei ist jede VM eine effiziente, isoliertes kopie einer realen Maschine.
-Im gegensatz dazu kontrolliert der Konsument das Gast Betriebssystem, die Middleware (z.B. Java) und die Anwendung. \cite{Badger}
-%Eventuell kürzen
+Im Softwarestack (\textbf{Abbildung \ref{IaaSControl}}) sieht man, dass der Provider nur noch die Kontrolle auf Hardware und den Hypervisor besitzt.
+%Ein Hypervisor ist ein Virtual Machine Monitor(VMM), der die Hardware verwendet, um eine oder mehrere Virtuelle Maschinen (VM) zu erstellen, dabei ist jede VM eine effiziente, isoliertes Kopie einer realen Maschine.
+Im Gegensatz dazu kontrolliert der Konsument das Gast Betriebssystem, die Middleware (z.B. Java) und die Anwendung\cite{Badger}.
+
 \subsection{Logische Sichtweise}
-
-%Um die Funktionsweise eines IaaS Systems zu verstehen, gehen wir in diesem Abschnitt näher auf die einzelnen Komponenten einer Cloud ein.
-
 Eine IaaS Cloud muss Ressourcen sowohl leistungs-als auch kosteneffizient bereitstellen, wobei die Fähigkeit zur Skalierung ohne Unterbrechung des Betriebs erhalten bleiben muss.
 Um die Funktionsweise eines IaaS Systems zu verstehen, gehen wir in diesem Abschnitt näher auf die einzelnen Komponenten einer Cloud ein.
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
 	\includegraphics[width=0.5\textwidth]{Images/IaaSLogic}
 	\caption{IaaS Logische Sichtweise (vgl. \cite{Badger})}
 	\label{IaaSLogic}
 \end{figure}
-
-
-Wie in \textbf{Abbildung \ref{IaaSLogic}} zu sehen ist, besteht eine IaaS Cloud aus drei Teilen:
+\textbf{Abbildung \ref{IaaSLogic}} zeigt, dass eine IaaS Cloud aus drei Teilen besteht:
 \begin{enumerate}
 	\item Cloud Manager
 	\item Cluster Manager
@@ -271,19 +254,17 @@ Wie in \textbf{Abbildung \ref{IaaSLogic}} zu sehen ist, besteht eine IaaS Cloud 
 
 \subsubsection{Cloud Manager}
 Die einzelnen Nutzer greifen über ein Netzwerk auf den Cloud Manager zu. Dieser ist ein öffentlicher Zugangspunkt zur Cloud, der für die Benutzerverwaltung (Erstellen/Verwalten) zuständig ist. 
-Außerdem ist er für die Generierung von Kryptongraphische Schlüssel zuständig, die Benutzer verwenden, um mit ihren VMs zu kommunizieren.
+Außerdem ist er für die Generierung von kryptographischen Schlüsseln zuständig, die Benutzer verwenden, um mit ihren VMs zu kommunizieren.
 Zusätzlich kümmert er sich um die Top-Level Ressourcen Verwaltung, wie z.B. besitzt die Cloud genug Ressourcen für die Anfrage und welcher Cluster Manager besitzt die benötigten freien Ressourcen.
-Sollte ein Cluster Manager genügend freie Ressourcen besitzen, bestätigt der Cloud Manager die Reservierung der Ressourcen mit diesem und Koordiniert den Aufbau des virtuellen Netzwerks, damit der Verbraucher einheitlich auf alle Ressourcen zugreifen kann.
-Dafür verbindet er sich mit Data Object Storage (DOS), der für die Konsumenten validierung zuständig ist. Dies wird für Administrative- und Abrechnungszwecke verwendet. \cite{Badger}
+Sollte ein Cluster Manager genügend freie Ressourcen besitzen, bestätigt der Cloud Manager die Reservierung der Ressourcen mit diesem und koordiniert den Aufbau des virtuellen Netzwerks, damit der Verbraucher einheitlich auf alle Ressourcen zugreifen kann.
+Dafür verbindet er sich mit Data Object Storage (DOS), der für die Konsumenten-Validierung zuständig ist. Dies wird für Administrative- und Abrechnungszwecke verwendet\cite{Badger}.
 
 \subsubsection{Cluster Manager}
-Ein Cluster Manager ist für die Operationen von mehreren Computer verantwortlich, die mit einem High-Speed LAN verbunden sind. Ein solches Computercluster kann mehrere Tausend Computer beinhalten,
-die geographisch voneinander getrennt sein können.
+Ein Cluster Manager ist für die Operationen von mehreren Computer verantwortlich, die mit einem High-Speed LAN verbunden sind. Ein solches Computercluster kann mehrere Tausend Computer beinhalten, die geographisch voneinander getrennt sein können.
 Der Cluster Manager erhält Ressourcen Reservierungsanfragen vom Cloud Manager, die er mit den zur Verfügung stehenden Ressourcen eines oder mehreren Computern abgleicht. Dieser sendet nach der 
-Berechnung eine Antwort, ob die Anfrage ganz oder zum Teil von diesem Cluster übernommen werden kann. Wenn der Cloud Manager den Befehl zur Reservierung der Ressourcen sendet, leitet der Cluster Manager diese Anfrage
-an den Computer Manager weiter. 
-Die Verbindung zum Persistent Local Storage (PLS) wird dafür verwendet, da Virtuelle Maschinen einen Persistenten Disk Speicher benötigen, um dessen Arbeit aufrecht zu erhalten, während die Zuweisung der virtuellen Maschine sich ändert.
-D.h. Virtuelle Maschinen sind nicht an einzelne Computer gebunden. \cite{Badger}
+Berechnung eine Antwort, ob die Anfrage ganz oder zum Teil von diesem Cluster übernommen werden kann. Wenn der Cloud Manager den Befehl zur Reservierung der Ressourcen sendet, leitet der Cluster Manager diese Anfrage an den Computer Manager weiter. 
+Die Verbindung zum Persistent Local Storage (PLS) wird dafür verwendet, da virtuelle Maschinen einen Persistenten Disk Speicher benötigen, um dessen Arbeit aufrecht zu erhalten, während die Zuweisung der virtuellen Maschine sich ändert.
+D.h. Virtuelle Maschinen sind nicht an einzelne Computer gebunden\cite{Badger}.
 
 \subsubsection{Computer Manager}
 
